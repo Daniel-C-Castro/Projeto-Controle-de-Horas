@@ -11,7 +11,7 @@ Possui 3 rotas.
 A porta utilizada é a (8000). E as rotas podem ser executadas a partir do navegador ou (preferencialmente) através do Insomnia.
 
 1. /entrada/:nomeUsuario - Pela qual o usuário coloca seu nome e dá entrada para contagem de tempo.
-
+![Screenshot]([screenshot.png](https://user-images.githubusercontent.com/138817128/264475394-1cb511b9-302d-4de1-a583-df8f0ca3c34c.png))
 Caso seja a primeira vez do usuário, o sistema colocará seu nome no banco de dados e criará um histórico para que possa armazenar seus pontos para futura consulta.Caso
 Além disso, é claro, cria uma data(horário) para que possa ser feito o cálculo de tempo quando for dado o ponto de saída.
 
