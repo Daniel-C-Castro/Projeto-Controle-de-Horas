@@ -12,9 +12,9 @@ const startTempo = async (req, res) => {
   try {
     const horaEntrada = new Date();
 
-    const usuarios = await fs.readFile("./src/bancodedados/bancodehoras.json");
+    let usuarios = await fs.readFile("./src/bancodedados/bancodehoras.json");
 
-    const parseUsuarios = JSON.parse(usuarios);
+    let parseUsuarios = JSON.parse(usuarios);
 
     const jaExiste = parseUsuarios.usuarios.find((pessoa) => {
       return pessoa.nome === nomeUsuario;
@@ -36,8 +36,8 @@ const startTempo = async (req, res) => {
     const entradasQuantidade =
       parseUsuarios.usuarios[indexUsuario].entradas.length;
     const saidasQuantidade = parseUsuarios.usuarios[indexUsuario].saidas.length;
-
-    if (entradasQuantidade > saidasQuantidade) {
+    console.log(entradasQuantidade, saidasQuantidade);
+    if (entradasQuantidade > saidasQuantidade + 1) {
       return res
         .status(402)
         .json(
@@ -121,7 +121,7 @@ const stopTempo = async (req, res) => {
 
     const dateFormatado = format(horaSaida, "d'/'MMM'-'HH':'mm");
     return res
-      .status(200)
+      .status(201)
       .json(`${nomeUsuario}: ${dateFormatado} - ${tempo.toFixed(2)} min`);
   } catch (erro) {
     res.status(500).json(erro.message);

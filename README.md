@@ -4,9 +4,11 @@
 
 Uma API que registra e guarda informações sobre horário de início e fim de um período de estudo/trabalho/projeto. Salva no banco de dados (json) e permite consultas posteriores. Essas consultas do banco de horas fornecem a data e horário das entradas e o período de tempo passado entre cada entrada e saída. No banco também fica registrado o nome do usuário. Futuramente, em caso de melhoria, já está previsto verificação por senha e mais funcionalidades, incluindo uma interface para o usuário.
 
-O projeto está sendo executado através do script com nodemon, no VS Code. Foram utilizados o express, nodemon e date-fns.
+O projeto está sendo executado através do script com nodemon (`node ./src/index.js`), no VS Code. Foram utilizados o express, nodemon e date-fns.
 
 Possui 3 rotas.
+
+A porta utilizada é a (8000). E as rotas podem ser executadas a partir do navegador ou (preferencialmente) através do Insomnia.
 
 1. /entrada/:nomeUsuario - Pela qual o usuário coloca seu nome e dá entrada para contagem de tempo.
 
